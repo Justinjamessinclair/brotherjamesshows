@@ -26,6 +26,7 @@
     max-width: 380px;
     margin: auto;
     padding: var(--gap);
+    padding-top: 0;      /* remove top padding */
   }
   
   .hero {
@@ -33,10 +34,12 @@
     margin-bottom: var(--gap);
   }
   .artist-pic {
-    width: 100%;
-    height: 300px;
+    width: 100vw;                                    /* full viewport width */
+    margin-left: calc(50% - 50vw);                   /* center it in the viewport */
+    margin-top: calc(var(--gap) * -1);               /* negate the container's top padding */
+    height: auto;                                    /* preserve aspect ratio */
+    border-radius: 0;                                /* remove rounding if you like */
     object-fit: cover;
-    border-radius: var(--radius); /* Changed from only bottom corners to all corners */
     margin-bottom: 20px;
     display: block;
     position: relative;
