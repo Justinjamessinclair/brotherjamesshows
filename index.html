@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.4/tabletop.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9f9f9">
+  <title>BrotherJames.Show</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <img src="https://justinjamessinclair.com/wp-content/uploads/2022/11/Brother-James-e1667584643493.png" alt="Brother James" class="artist-pic">
+      <h1>Get Tonight's Setlist</h1>
+      <div>
+        <div style="margin-top: 10px;">
+        <strong>&amp; Perks:</strong>
+        <ul style="list-style: disc; margin: 8px 0 0 1.2em; text-align: left; line-height: 1.8;">
+          <li>A free bookmark <span style="margin-left: 0.25em;">📖</span></li>
+          <li>A chance to win free merch <span style="margin-left: 0.25em;">📚👕🍶</span></li>
+          <li>A heads up for releases & shows :)</li>
+        </ul>
+      </div>
+    </header>
+
+    <form id="signup-form" class="form" novalidate>
+      <div class="form-group">
+        <label for="name">Name <span class="required">*</span></label>
+        <input id="name" name="name" type="text" required autocomplete="name" placeholder="First Last">
+      </div>
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="You@email.com">
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip Code <span class="required">*</span></label>
+        <input id="zip" name="zip" type="text" required pattern="\d{5}" inputmode="numeric" placeholder="Your Zip Code">
+      </div>
+      <button type="submit" class="btn btn-primary">Get Access</button>
+      <p class="form-note">
+        <span style="font-weight: 500; color: var(--primary);">
+          By signing up, you agree to join the mailing list
+        </span><br>
+        <span style="font-size: 0.92em; color: var(--muted);">
+          I'll share upcoming releases and let you know when I'm playing near you next!
+        </span>
+      </p>
+    </form>
+
+    <section id="post-signup" class="post-signup hidden">
+      <div class="actions">
+        <button id="show-setlist" class="btn btn-outline">
+          Open the Set List 🎼
+        </button>
+        <a href="https://www.patreon.com/brotherjames" class="btn btn-outline btn-patreon">
+          Join My Patreon
+          <img src="icons/patreon.png" class="btn-icon" alt="Patreon">
+        </a>
+        <a href="https://distrokid.com/hyperfollow/brotherjames/next-release" class="btn btn-outline btn-presave">
+          Pre-save the new song!
+          <img src="icons/spotify.png" class="btn-icon" alt="Spotify">
+          <img src="icons/applemusic.png" class="btn-icon" alt="Apple Music">
+        </a>
+      </div>
+
+      <section id="setlist-container" class="setlist hidden">
+        <h2>Tonight’s Set List:</h2>
+        <ul id="setlist"></ul>
+        <h3>Playlist:</h3>
+        <div class="playlist-actions">
+          <a href="https://open.spotify.com/artist/5xZglTXVKOkpkC70KMPis9?si=vnYfw4zkQiyvwJAGh031yw" class="btn btn-spotify" target="_blank" aria-label="Spotify">
+            <img src="icons/spotify.png" class="btn-icon" alt="Spotify">
+          </a>
+          <a href="https://music.apple.com/us/artist/brother-james/1369005390" class="btn btn-apple" target="_blank" aria-label="Apple Music">
+            <img src="icons/applemusic.png" class="btn-icon" alt="Apple Music">
+          </a>
+        </div>
+      </section>
+
+      <form id="feedback-form" class="form feedback-form">
+        <label for="feedback" class="feedback-label" style="color: var(--text); font-family: inherit;">
+          Anything you want to tell me or chat about following the show?
+        </label>
+        <textarea id="feedback" name="feedback" rows="3" placeholder="Your thoughts, favorite moments, or suggestions..." required></textarea>
+        <button type="submit" class="btn btn-primary feedback-btn">
+          I'm all ears!
+          <img src="icons/send.png" alt="Send" class="btn-icon" />
+        </button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="https://music.apple.com/us/artist/brother-james/1369005390" target="_blank" aria-label="Apple Music">
+            <img src="icons/applemusic.png" alt="">
+        </a>
+        <a href="https://open.spotify.com/artist/5xZglTXVKOkpkC70KMPis9?si=vnYfw4zkQiyvwJAGh031yw" target="_blank" aria-label="Spotify">
+            <img src="icons/spotify.png" alt="">
+        </a>
+        <a href="https://instagram.com/justinjames" target="_blank" aria-label="Instagram">
+          <img src="icons/instagram.png" alt="">
+        </a>
+        <a href="https://justinjamessinclair.com/Brotherjames" target="_blank" aria-label="YouTube">
+          <img src="icons/youtube.png" alt="">
+        </a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

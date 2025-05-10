@@ -1,0 +1,435 @@
+:root {
+    --bg: #f9f9f9;
+    --surface: #ffffff;
+    --primary: #0071e3;
+    --on-primary: #ffffff;
+    --outline: #0071e3;
+    --text: #111111;
+    --muted: #555555;
+    --radius: 10px;
+    --gap: 16px;
+    --transition: 0.2s ease;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  
+  .container {
+    max-width: 380px;
+    margin: auto;
+    padding: var(--gap);
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: var(--gap);
+  }
+  .artist-pic {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius); /* Changed from only bottom corners to all corners */
+    margin-bottom: 20px;
+    display: block;
+    position: relative;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    background: var(--surface);
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 1.75rem;
+  }
+  
+  p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  
+  .form {
+    background: var(--surface);
+    padding: var(--gap);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .form-group {
+    margin-bottom: var(--gap);
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: border-color var(--transition);
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    text-align: left;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: transform var(--transition);
+  }
+  
+  .btn:hover {
+    transform: scale(1.02);
+  }
+  
+  .btn-primary {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--outline);
+  }
+  
+  .btn-outline:hover {
+    background: rgba(0,113,227,0.2); /* var(--primary) at 20% opacity */
+    color: var(--primary);
+  }
+  
+  .btn-secondary {
+    background: #f0f0f0;
+    color: var (--text);
+  }
+  
+  .form-note {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 12px;
+    text-align: center;
+  }
+  
+  .form-note span:first-child {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column !important;
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+  }
+  
+  .actions .btn {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .btn-patreon {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .btn-patreon:hover {
+    background: rgba(0, 0, 0, 0.05); /* black at 20% opacity */
+    color: #000;
+  }
+  
+  .btn-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    object-fit: contain;
+    vertical-align: middle;
+    filter: none;
+  }
+  
+  .btn-presave {
+    background: transparent;
+    color: #1db954; /* Spotify Green */
+    border: 2px solid #1db954;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .btn-presave:hover {
+    background: rgba(29, 185, 84, 0.05); /* Spotify green at 20% opacity */
+    color: #1db954;
+  }
+
+  /* Bigger, closer icons in PreSave button */
+  .btn-presave .btn-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+  }
+  
+  .btn-spotify {
+    background: #1db954;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-spotify:hover {
+    background: rgba(29,185,84,0.2);
+  }
+  
+  .btn-apple {
+    background: #D60217;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-apple:hover {
+    background: rgba(250,87,193,0.2);
+  }
+  
+  .setlist {
+    background: var(--surface);
+    padding: var(--gap);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-top: var(--gap);
+  }
+
+  /* Enhanced Set List styling */
+  #setlist-container {
+    margin-top: var(--gap);
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  
+  .loading {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: var(--gap);
+  }
+  
+  .setlist h2 {
+    margin: 0 0 var(--gap) 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .setlist h3 {
+    text-align: center;
+  }
+  
+  #setlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #setlist li {
+    cursor: pointer;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .setlist li {
+    padding: 12px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    transition: background var(--transition), color var(--transition);
+  }
+
+  .setlist li:hover {
+    background: rgba(0,0,0,0.05);
+  }
+
+  .setlist li.active {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+  
+  .lyrics {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background: #fafafa;
+    border-left: 3px solid var(--primary);
+    margin-bottom: var(--gap);
+  }
+
+  /* Lyrics panel styling */
+  .lyrics {
+    margin: 4px 0 var(--gap);
+    padding: 8px 12px;
+    background: #fafafa;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    color: var(--text);
+  }
+  
+  .music-links,
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    margin-top: var(--gap);
+  }
+  
+  .music-links img,
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: inline-block;
+    transition: transform 0.2s, filter 0.2s;
+  }
+  
+  .music-links img:hover,
+  .social-icons img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.15) drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+  }
+  
+  .playlist-actions {
+    display: flex;
+    gap: var(--gap);
+    justify-content: center;
+    margin-top: var(--gap);
+  }
+  
+  .playlist-actions .btn {
+    height: 50px;
+    width: 50px;
+    padding: 0 var(--gap);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .playlist-actions .btn-icon {
+    filter: brightness(0) invert(1);
+    margin: 0;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: var(--gap * 2);
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  .post-signup {
+    background: var(--surface);
+    padding: var(--gap);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-top: var(--gap);
+  }
+  
+  .post-signup .actions {
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+  }
+  
+  .feedback-form {
+    margin-top: var(--gap);
+    background: var(--surface);
+    border-radius: var (--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+  
+  .feedback-label {
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+    text-align: center;
+  }
+  
+  .feedback-form textarea {
+    resize: vertical;
+    min-height: 60px;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    background: #fafbfc;
+    color: var(--text);
+    transition: border-color var(--transition);
+  }
+  
+  .feedback-form textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+  
+  .feedback-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
+  }
+  
+  .feedback-btn .btn-icon {
+    filter: brightness(0) invert(1);
+  }
+  
+  .feedback-form,
+  .feedback-form label,
+  .feedback-form textarea {
+    font-family: inherit;
+    color: var(--text);
+  }
+  
+  .required {
+    color: #ff3b30;
+    margin-left: -2px;
+  }
